@@ -1,0 +1,31 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+  datasource:
+    url: jdbc:postgresql://localhost:5432/megapolis_viva
+    driver-class-name: org.postgresql.Driver
+    username: ********
+    password: **************
+  liquibase:
+    change-log: classpath:/db/changelog-master.xml
+    enabled: true
+
+server:
+  port: 8081
+
+thesis:
+  address: http://192.168.0.1
+  port: 8080
+  task-initiator: ****
+  default-task-executor: ****
+
+# google account data: Email- ****.****@gmail.com; Pass- **********
+# HOW TO GET SHEET ID?  Example: https://docs.google.com/spreadsheets/d/ <ID HERE --> ***************************** <-- ID HERE> /edit#gid=8465416548
+sheet:
+  google-redirect-port: 8888
+  spreadsheet-id: **************************
+  # Рекомендуется выставлять не чаще чем раз в минуту, иначе гугл со временем начнёт отвечать, что запросы слишком частые
+  scheduler-timer-ms: 60000
+  sheet-names: Челябинск, Уфа, Самара, Красноярск, Омск, Магнитогорск, Новокузнецк, Н.Тагил, Москва
